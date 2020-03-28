@@ -16,7 +16,7 @@ mongoose.connect('mongodb://yuri:yuri1123@ds141766.mlab.com:41766/movie', {
 .catch(err => console.log(err))
 
 
-app.get('/', (req, res) => res.send('hello world!'))
+app.get('/', (req, res) => res.send('hello world!ffffff'))
 
 
 app.post('/register', (req, res) => {

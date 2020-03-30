@@ -5,12 +5,13 @@ const bodyParser = require('body-parser');
 const { User } = require("./models/User");
 
 
+const config = require('./config/key')
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 const mongoose = require('mongoose')
-mongoose.connect('mongodb://yuri:yuri1123@ds141766.mlab.com:41766/movie', {
+mongoose.connect(config.mongoURI , {
     useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false
 }).then(() => console.log('MongoDB Connected...'))
 .catch(err => console.log(err))

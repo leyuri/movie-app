@@ -1,14 +1,15 @@
 const mongoose = require('mongoose');
-
-
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
 const userSchema = mongoose.Schema({
+
     name: {
         type:String,
         maxlength:50
     },
     email: {
         type:String,
-        trim:true,//스페이스를 없애줌
+        trim:true,
         unique: 1 
     },
     password: {
@@ -19,11 +20,10 @@ const userSchema = mongoose.Schema({
         type:String,
         maxlength: 50
     },
-    role : {//0이면 관리자고..1이면 사용자고..
+    role : {
         type:Number,
         default: 0 
     },
-    image: String,
     token : {
         type: String,
     },
@@ -32,6 +32,40 @@ const userSchema = mongoose.Schema({
     }
 })
 
-const User = mongoose.model('User', userSchema);
+
+userSchema.pre('save', function( next ) {
+    var user = this;
+    
+    if(user.isModified('password')){
+
+        bcrypt.genSalt(saltRounds, function(err, salt){
+            if(err) return next(err);
+    
+            bcrypt.hash(user.password, salt, function(err, hash){
+                if(err) return next(err);
+                user.password = hash 
+            })
+        })
+    } else {
+        next ()
+    }
+});
+
+//cb = callback
+
+userSchema.methods.comparePassword = function(plainPassword,cb){
+
+    //plainPassword 12334567 
+    //암호화된 비밀번호 kajfkjfkekjkjk .....
+
+    bcrypt.compare(plainPassword, this.password, function(err, isMatch){
+        if (err) return cb(err);
+        cb(null, isMatch)
+    })
+}
+
+
+
+const User = mongoose.model('User', userSchema)
 
 module.exports = { User }

@@ -18,14 +18,11 @@ function App() {
     <Router>
       <div>
         <Switch>
-          <Route path="/login">
-            <LoginPage />
+          <Route path="/login" component={LoginPage}>
           </Route>
-          <Route path="/register">
-            <RegisterPage />
+          <Route path="/register" component={RegisterPage}>
           </Route>
-          <Route path="/">
-            <LandingPage />
+          <Route path="/" component={LandingPage}>
           </Route>
         </Switch>
       </div>

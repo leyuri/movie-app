@@ -31,7 +31,7 @@ function RegisterPage(props) {
         event.preventDefault();
 
         if (Password !== ConfirmPassword) {
-            return alert('비밀번호와 비밀번호 확인은 같아야 합니다.')
+            return alert('Password and ConfirmPassword must be the same.')
         }
 
         let body = {
@@ -39,6 +39,17 @@ function RegisterPage(props) {
             password: Password,
             name: Name
         }
+
+        //원래 redux를 사용하지 않으면 Axios.post('api/users/register) 이런 식으로....
+        
+        dispatch(registerUser(body))
+            .then(response => {
+                if (response.payload.success) {
+                    props.history.push("/login")
+                } else {
+                    alert("Failed to sign up")
+                }
+            })
     }
 
 

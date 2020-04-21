@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react'
 import axios from 'axios';
-
+import { withRouter } from 'react-router-dom'; 
 function LandingPage(props) {
 
     useEffect(() => {
         axios.get('/api/hello')
             .then(response => { console.log(response) })
-                //서버에서 돌아오는 console을 보여줄 수 있도록 한 것임
     }, [])
 
 
@@ -16,17 +15,18 @@ function LandingPage(props) {
                 if (response.data.success) {
                     props.history.push("/login")
                 } else {
-                    alert('Failed to logout')
+                    alert('로그아웃 하는데 실패 했습니다.')
                 }
             })
     }
+
     return (
         <div style={{
             display: 'flex', justifyContent: 'center', alignItems: 'center'
             , width: '100%', height: '100vh'
         }}>
             <h2>시작 페이지</h2>
-            <br></br><br></br><br></br><br></br>
+
             <button onClick={onClickHandler}>
                 로그아웃
             </button>
@@ -35,4 +35,4 @@ function LandingPage(props) {
     )
 }
 
-export default LandingPage
+export default withRouter(LandingPage)

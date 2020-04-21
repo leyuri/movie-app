@@ -1,7 +1,9 @@
+
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { registerUser } from '../../../_actions/user_action';
-
+import Axios from 'axios';
+import { withRouter } from 'react-router-dom';
 function RegisterPage(props) {
     const dispatch = useDispatch();
 
@@ -31,7 +33,7 @@ function RegisterPage(props) {
         event.preventDefault();
 
         if (Password !== ConfirmPassword) {
-            return alert('Password and ConfirmPassword must be the same.')
+            return alert('비밀번호와 비밀번호 확인은 같아야 합니다.')
         }
 
         let body = {
@@ -39,9 +41,6 @@ function RegisterPage(props) {
             password: Password,
             name: Name
         }
-
-        //원래 redux를 사용하지 않으면 Axios.post('api/users/register) 이런 식으로....
-        
         dispatch(registerUser(body))
             .then(response => {
                 if (response.payload.success) {
@@ -76,11 +75,11 @@ function RegisterPage(props) {
 
                 <br />
                 <button type="submit">
-                    Sign up
+                    회원 가입
                 </button>
             </form>
         </div>
     )
 }
 
-export default RegisterPage
+export default withRouter(RegisterPage)

@@ -360,7 +360,6 @@ npm install redux react-redux redux-promise redux-thunk --save
 promise, function, 형식으로도 올 수 있다. 그럼 리덕스 스토어를 받지 못한다. 따라서 
 
 <img width="759" alt="Screen Shot 2020-08-04 at 6 44 20 PM" src="https://user-images.githubusercontent.com/33794732/89279628-927d5000-d682-11ea-98df-5c2c9949093c.png">
-<img width="718" alt="Screen Shot 2020-08-04 at 6 44 29 PM" src="https://user-images.githubusercontent.com/33794732/89279612-8c876f00-d682-11ea-9314-9ec84a646cf3.png">
 
 리듀서 안에 리듀서들이 여러개 있을 수 있다. 리듀서 안에서 하는 일: 어떻게 스테이트가 변하는 것을 보여주고, 그 마지막 변화된 값을 리턴해주는 것이다. 
 

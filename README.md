@@ -306,7 +306,8 @@ what is state?
 
 1. parent component에서 child component로 data를 보내는 게 아닌 그 component안에서 데이터를 전달하려면? state으로, 예를 들어서 검색 창에 글을 입력할 때 글이 변하는 것은 state를 바꾸는 것이다. 
 
-   그냥 컴포넌트 안에서 값을 변경하거나, 데이터 교환 및 전달할 때 사용하는 것이다. 그냥 안에서도 state를 충분히 변하게 할 수 있다. ![Screen Shot 2020-04-07 at 11.41.22 PM](/Users/yuri/Library/Application Support/typora-user-images/Screen Shot 2020-04-07 at 11.41.22 PM.png)
+   그냥 컴포넌트 안에서 값을 변경하거나, 데이터 교환 및 전달할 때 사용하는 것이다. 그냥 안에서도 state를 충분히 변하게 할 수 있다. <img width="761" alt="Screen Shot 2020-08-04 at 6 41 48 PM" src="https://user-images.githubusercontent.com/33794732/89279321-31ee1300-d682-11ea-9f8d-1b4e08278b97.png">
+
 
 2. state is mutable
 

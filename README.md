@@ -307,6 +307,8 @@ what is state?
 1. parent component에서 child component로 data를 보내는 게 아닌 그 component안에서 데이터를 전달하려면? state으로, 예를 들어서 검색 창에 글을 입력할 때 글이 변하는 것은 state를 바꾸는 것이다. 
 
    그냥 컴포넌트 안에서 값을 변경하거나, 데이터 교환 및 전달할 때 사용하는 것이다. 그냥 안에서도 state를 충분히 변하게 할 수 있다. <img width="761" alt="Screen Shot 2020-08-04 at 6 41 48 PM" src="https://user-images.githubusercontent.com/33794732/89279321-31ee1300-d682-11ea-9f8d-1b4e08278b97.png">
+   
+ 
 
 
 2. state is mutable
@@ -357,9 +359,8 @@ npm install redux react-redux redux-promise redux-thunk --save
 
 promise, function, 형식으로도 올 수 있다. 그럼 리덕스 스토어를 받지 못한다. 따라서 
 
-
-
-![Screen Shot 2020-04-08 at 12.37.46 AM](/Users/yuri/Library/Application Support/typora-user-images/Screen Shot 2020-04-08 at 12.37.46 AM.png)
+<img width="759" alt="Screen Shot 2020-08-04 at 6 44 20 PM" src="https://user-images.githubusercontent.com/33794732/89279628-927d5000-d682-11ea-98df-5c2c9949093c.png">
+<img width="718" alt="Screen Shot 2020-08-04 at 6 44 29 PM" src="https://user-images.githubusercontent.com/33794732/89279612-8c876f00-d682-11ea-9314-9ec84a646cf3.png">
 
 리듀서 안에 리듀서들이 여러개 있을 수 있다. 리듀서 안에서 하는 일: 어떻게 스테이트가 변하는 것을 보여주고, 그 마지막 변화된 값을 리턴해주는 것이다. 
 
@@ -369,7 +370,7 @@ root Reducer로 한번에 여러 리듀서들을 합쳐준 것이다.
 
 ####  React Hooks
 
-![Screen Shot 2020-04-08 at 12.41.53 AM](/Users/yuri/Library/Application Support/typora-user-images/Screen Shot 2020-04-08 at 12.41.53 AM.png)
+<img width="718" alt="Screen Shot 2020-08-04 at 6 44 29 PM" src="https://user-images.githubusercontent.com/33794732/89279612-8c876f00-d682-11ea-9314-9ec84a646cf3.png">
 
  class component는에서는 더 많은 기능을 사용할 수 있다. 근데 더 느려질 수 있음. 코드 긺
 
